@@ -1,59 +1,68 @@
-.contact{
-    background-image: url(https://img.magnific.com/free-photo/3d-render-concept-phone-receiver-3d-art-design-illustration_460848-9667.jpg);
-    background-size: fill;
-    color:rgb(9, 9, 9);
-    text-align:center;
-    padding:60px 20px;
-    margin: 0;
+/* നിങ്ങളുടെ പഴയ അതേ ഡിസൈൻ സ്റ്റൈലുകൾ */
+.navbar {
+  background-color: #0b0f19; /* ഇരുണ്ട ബാക്ക്ഗ്രൗണ്ട് */
+  padding: 15px 30px;
 }
 
-.contact h1{
-    font: size 2.5em;;
-    margin-bottom:10px;
+.logo {
+  color: #9fef00; /* പച്ച നിറം */
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin: 0;
 }
 
-.contact p{
-    color:rgb(11, 11, 11);
-    margin-bottom:50px;
+.navbar ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 25px;
 }
 
-form{
-    width:700px;
-    margin:auto;
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-    margin-top:30px;
+.navbar ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
 }
 
-form input,
-form textarea{
-    width:100%;
-    padding:12px 15px;
-    background:#111;
-    border: 1px solid #ccc;
-    outline:none;
-    color:white;
-    margin-bottom:20px;
-    border-radius:5px;
-    font-size:1rem;
+.navbar ul li a:hover {
+  color: #9fef00;
 }
 
-form button{
-    background:#8cc63f;
-    
-    padding:12px;
-    color:white;
-    cursor:pointer;
-    font-size:1rem;
-    background:transparent;
-border:none;
-border-radius: 5px;
-font-weight: bold;
-margin:10px;
-transition:.3s;
-}
-button:hover{
- background:#0b0b0b;
- opacity: 0.9;
+/* 📱 മൊബൈലിന് വേണ്ടിയുള്ള പ്രത്യേക ഡിസൈൻ (ഇതാണ് മാറ്റം വരുത്തുന്നത്) */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background-color: #0b0f19; /* മെനു തുറക്കുമ്പോൾ ബാക്ക്ഗ്രൗണ്ട് കറുപ്പാക്കാൻ */
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 20px;
+    z-index: 1000; /* മറ്റ് സെക്ഷനുകളുടെ അടിയിലേക്ക് പോകാതിരിക്കാൻ */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .navbar ul {
+    flex-direction: column; /* ലിങ്കുകൾ ഒന്നിന് താഴെ ഒന്നായി വരാൻ */
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .navbar ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar ul li a {
+    display: block;
+    padding: 10px 0;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* ലിങ്കുകൾക്കിടയിൽ ഒരു ചെറിയ വര */
+  }
+  
+  .navbar ul li:last-child a {
+    border-bottom: none; /* അവസാന ലിങ്കിന് വര വേണ്ട */
+  }
 }
