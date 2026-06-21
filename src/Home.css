@@ -1,0 +1,48 @@
+.home{
+min-height:100vh;
+background:black;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 100px;
+}
+
+.left{
+width:50%;
+}
+
+.left h1{
+/* font-size:220px; */
+margin-bottom:20px;
+Color:white;
+font-style:sans-serif;
+/* padding-bottom:50px; */
+}
+
+.left p{
+color:gray;
+margin-bottom:40px;
+/* padding-bottom:50px; */
+}
+
+.buttons button{
+background:transparent;
+color:rgb(253, 252, 252);
+border:1px solid #8cc63f;
+padding:10px 20px;
+margin:10px;
+cursor:pointer;
+transition:.3s;
+
+}
+.buttons button:hover{
+background:#8cc63f;
+}
+.right{
+width:40%;
+}
+
+.right img{
+width:100%;
+border-radius:10px;
+}

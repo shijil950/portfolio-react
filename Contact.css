@@ -1,0 +1,40 @@
+.contact{
+    background:#1d1d1d;
+    color:white;
+    text-align:center;
+    padding:100px 80px;
+}
+
+.contact h1{
+    font-size:40px;
+}
+
+.contact p{
+    color:gray;
+    margin-bottom:50px;
+}
+
+form{
+    width:700px;
+    margin:auto;
+}
+
+form input,
+form textarea{
+    width:100%;
+    padding:18px;
+    background:#111;
+    border:none;
+    outline:none;
+    color:white;
+    margin-bottom:20px;
+}
+
+form button{
+    background:#8cc63f;
+    border:none;
+    padding:15px 35px;
+    color:white;
+    cursor:pointer;
+    font-size:17px;
+}
