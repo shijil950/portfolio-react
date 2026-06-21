@@ -9,3 +9,29 @@ html, body, #root {
   min-height: 100vh;
   background: #111;
 }
+
+@media (max-width: 768px) {
+  
+  section, 
+  .home, 
+  .services, 
+  .portfolio, 
+  .team, 
+  .contact {
+    min-height: auto !important;
+    height: auto !important;
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+
+
+  .service-container,
+  .portfolio-container,
+  .team-container {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: auto !important;
+    gap: 20px !important;
+  }
+}
