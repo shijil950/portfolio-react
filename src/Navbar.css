@@ -1,76 +1,102 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:sans-serif;
+/* --- പൊതുവായ സ്റ്റൈലുകൾ (Laptop View) --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+  background-color: #0c0c0c; /* നിങ്ങളുടെ ബ്ലാക്ക് തീം */
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* എല്ലാ സെക്ഷനുകൾക്കും മുകളിൽ നിൽക്കാൻ */
+  box-sizing: border-box;
 }
 
-body{
-background:#1d1d1d;
-color:white;
+.navbar-logo h3 {
+  color: #99cc33; /* നിങ്ങളുടെ ഗ്രീൻ കളർ */
+  margin: 0;
+  font-size: 22px;
+  font-weight: bold;
 }
 
-.navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:25px 80px;
-background:black;
-position:sticky;
-top:0;
-z-index:100;
-}
-
-.logo{
-color:#8cc63f;
-}
-
-.navbar ul{
-display:flex;
-list-style:none;
-gap:30px;
-}
-
-.navbar a{
-color:white;
-text-decoration:none;
-transition:.3s;
-}
-
-.navbar a:hover{
-color:#8cc63f;
-}
-/* മൊബൈൽ ഫോണുകളിൽ ലിങ്കുകൾ വലുതാക്കാനും എളുപ്പത്തിൽ ക്ലിക്ക് ചെയ്യാനും */
-@media (max-width: 768px) {
-  /* ബാറിന്റെ ഹൈറ്റും ഉൾവശത്തെ സ്പേസും കൂട്ടാൻ */
-  nav, .navbar {
-    padding: 15px 20px !important;
-    height: auto !important;
-  }
-
-  /* ലിങ്കുകൾ തമ്മിലുള്ള അകലം കൂട്ടാനും ഫോണ്ട് വലിപ്പം കൂട്ടാനും */
-  nav ul, .nav-menu {
-    gap: 15px !important; /* ലിങ്കുകൾ തമ്മിലുള്ള അകലം */
-  }
-
-  nav a, .nav-links {
-    font-size: 16px !important; /* അക്ഷരങ്ങൾ വ്യക്തമായി കാണാൻ */
-    padding: 10px 12px !important; /* വിരൽ തൊടാൻ പാകത്തിന് ചുറ്റും സ്പേസ് നൽകുന്നു (Touch Target) */
-    display: inline-block !important;
-  }
-}
-/* മൊബൈൽ വ്യൂവിൽ സാധാരണയായി ലിങ്കുകൾ മറച്ചുവെക്കുക */
 .nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #99cc33; /* ഹോവർ ചെയ്യുമ്പോൾ പച്ച നിറം */
+}
+
+/* ലാപ്ടോപ്പിൽ ഈ മൂന്ന് വരകളുടെ ബട്ടൺ കാണിക്കരുത് */
+.mobile-menu-icon {
   display: none;
 }
 
-/* ആക്റ്റീവ് ആകുമ്പോൾ മാത്രം കാണിക്കുക */
-.nav-links-mobile {
-  display: block;
-  position: absolute;
-  top: 60px;
-  left: 0;
-  width: 100%;
-  background-color: #0c0c0c; /* നിങ്ങളുടെ ബ്ലാക്ക് ബാക്ക്ഗ്രൗണ്ട് */
-  z-index: 100; /* ഇത് മുന്നിൽ വരാൻ */
+/* --- മൊബൈൽ വ്യൂ സ്റ്റൈലുകൾ (Mobile Responsive) --- */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+    height: 70px;
+  }
+
+  /* ലിങ്കുകൾ അടങ്ങിയ മെനു മൊബൈലിൽ ഫുൾ സ്ക്രീൻ മറയായി മാറും */
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 70px; /* നാവ്ബാറിന്റെ കൃത്യം താഴെ മുതൽ */
+    left: -100%; /* ആദ്യം സ്ക്രീനിന്റെ വെളിയിൽ ഒളിപ്പിച്ചു വെക്കുന്നു */
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-color: #0c0c0c;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 50px;
+    gap: 25px;
+    transition: left 0.4s ease; /* മെനു വഴുതി വരാൻ (Animation) */
+    z-index: 999;
+  }
+
+  /* ബട്ടൺ ക്ലിക്ക് ചെയ്യുമ്പോൾ മെനു സ്ക്രീനിലേക്ക് വരും */
+  .nav-links.active {
+    left: 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links li a {
+    font-size: 20px;
+    padding: 15px;
+    display: block; /* വിരൽ തൊടാൻ പാകത്തിന് സ്പേസ് കൂട്ടുന്നു */
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* മൊബൈലിൽ മൂന്ന് വരകളുടെ ബട്ടൺ കാണിക്കുക */
+  .mobile-menu-icon {
+    display: block;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1001; /* മെനുവിനും മുകളിൽ ബട്ടൺ വരാൻ */
+    padding: 5px;
+  }
 }

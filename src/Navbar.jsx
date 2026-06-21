@@ -2,43 +2,33 @@ import React, { useState } from 'react';
 import './Navbar.css';
 
 function Navbar() {
-  // മെനു ഓപ്പൺ/ക്ലോസ് സ്റ്റേറ്റ്
-  const [isMobile, setIsMobile] = useState(false);
+  // മൊബൈൽ മെനു ഓപ്പൺ/ക്ലോസ് ചെയ്യാനുള്ള സ്റ്റേറ്റ്
+  const [isOpen, setIsOpen] = useState(false);
 
-  // ലിങ്കിൽ ക്ലിക്ക് ചെയ്യുമ്പോൾ മെനു ക്ലോസ് ചെയ്യാനുള്ള ഫങ്ഷൻ
-  const closeMobileMenu = () => {
-    setIsMobile(false);
+  // ലിങ്കുകളിൽ ക്ലിക്ക് ചെയ്യുമ്പോൾ മെനു തനിയെ അടയാൻ
+  const closeMenu = () => {
+    setIsOpen(false);
   };
 
   return (
     <nav className="navbar">
-      <h3 className="logo">MUHAMMED SHIJIL NK</h3>
-      
-      {/* ഇവിടെ നിങ്ങളുടെ സ്റ്റേറ്റ് അനുസരിച്ചായിരിക്കും ക്ലാസ് നെയിം മാറുക */}
-      <ul className={isMobile ? "nav-links-mobile" : "nav-links"}>
-        <li>
-          <a href="#home" onClick={closeMobileMenu}>Home</a>
-        </li>
-        <li>
-          <a href="#services" onClick={closeMobileMenu}>Services</a>
-        </li>
-        <li>
-          <a href="#portfolio" onClick={closeMobileMenu}>Portfolio</a>
-        </li>
-        <li>
-          <a href="#team" onClick={closeMobileMenu}>Team</a>
-        </li>
-        <li>
-          <a href="#blog" onClick={closeMobileMenu}>Blog</a>
-        </li>
-        <li>
-          <a href="#contact" onClick={closeMobileMenu}>Contact</a>
-        </li>
+      <div className="navbar-logo">
+        <h3>MUHAMMED SHIJIL NK</h3>
+      </div>
+
+      {/* isOpen ട്രൂ ആണെങ്കിൽ 'active' ക്ലാസ് കൂടി വരും */}
+      <ul className={`nav-links ${isOpen ? 'active' : ''}`}>
+        <li><a href="#home" onClick={closeMenu}>Home</a></li>
+        <li><a href="#services" onClick={closeMenu}>Services</a></li>
+        <li><a href="#portfolio" onClick={closeMenu}>Portfolio</a></li>
+        <li><a href="#team" onClick={closeMenu}>Team</a></li>
+        <li><a href="#blog" onClick={closeMenu}>Blog</a></li>
+        <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
       </ul>
 
-      {/* ഹാംബർഗർ ഐക്കൺ ബട്ടൺ */}
-      <button className="mobile-menu-icon" onClick={() => setIsMobile(!isMobile)}>
-        {isMobile ? <i className="fas fa-times"></i> : <i className="fas fa-bars"></i>}
+      {/* മൊബൈലിൽ കാണിക്കാനുള്ള മൂന്ന് വരകളുടെ/ഗുണന ചിഹ്നത്തിന്റെ ബട്ടൺ */}
+      <button className="mobile-menu-icon" onClick={() => setIsOpen(!isOpen)}>
+        {isOpen ? '✕' : '☰'}
       </button>
     </nav>
   );
