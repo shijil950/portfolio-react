@@ -3,11 +3,13 @@
     background-size: fill;
     color:rgb(9, 9, 9);
     text-align:center;
-    padding:100px 80px;
+    padding:60px 20px;
+    margin: 0;
 }
 
 .contact h1{
-    font-size:40px;
+    font: size 2.5em;;
+    margin-bottom:10px;
 }
 
 .contact p{
@@ -18,32 +20,40 @@
 form{
     width:700px;
     margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    margin-top:30px;
 }
 
 form input,
 form textarea{
     width:100%;
-    padding:18px;
+    padding:12px 15px;
     background:#111;
-    border:none;
+    border: 1px solid #ccc;
     outline:none;
     color:white;
     margin-bottom:20px;
+    border-radius:5px;
+    font-size:1rem;
 }
 
 form button{
     background:#8cc63f;
     
-    padding:15px 35px;
+    padding:12px;
     color:white;
     cursor:pointer;
-    font-size:17px;
+    font-size:1rem;
     background:transparent;
-border:1px solid #060606;
-padding:10px 20px;
+border:none;
+border-radius: 5px;
+font-weight: bold;
 margin:10px;
 transition:.3s;
 }
 button:hover{
  background:#0b0b0b;
+ opacity: 0.9;
 }
