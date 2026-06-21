@@ -59,3 +59,18 @@ color:#8cc63f;
     display: inline-block !important;
   }
 }
+/* മൊബൈൽ വ്യൂവിൽ സാധാരണയായി ലിങ്കുകൾ മറച്ചുവെക്കുക */
+.nav-links {
+  display: none;
+}
+
+/* ആക്റ്റീവ് ആകുമ്പോൾ മാത്രം കാണിക്കുക */
+.nav-links-mobile {
+  display: block;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: #0c0c0c; /* നിങ്ങളുടെ ബ്ലാക്ക് ബാക്ക്ഗ്രൗണ്ട് */
+  z-index: 100; /* ഇത് മുന്നിൽ വരാൻ */
+}

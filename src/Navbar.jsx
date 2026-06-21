@@ -1,38 +1,45 @@
-import "./Navbar.css";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import './Navbar.css';
 
 function Navbar() {
+  // മെനു ഓപ്പൺ/ക്ലോസ് സ്റ്റേറ്റ്
+  const [isMobile, setIsMobile] = useState(false);
+
+  // ലിങ്കിൽ ക്ലിക്ക് ചെയ്യുമ്പോൾ മെനു ക്ലോസ് ചെയ്യാനുള്ള ഫങ്ഷൻ
+  const closeMobileMenu = () => {
+    setIsMobile(false);
+  };
+
   return (
-    <nav className="navbar navbar-expand-lg">
-      <div className="container-fluid d-flex justify-content-between align-items-center w-100">
-        
-        <h2 className="logo">MUHAMMED SHIJIL NK</h2>
-        
-        <button 
-          className="navbar-toggler" 
-          type="button" 
-          data-bs-toggle="collapse" 
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          style={{ border: "1px solid white" }}
-        >
-          <span className="navbar-toggler-icon" style={{ filter: "invert(1)" }}></span>
-        </button>
+    <nav className="navbar">
+      <h3 className="logo">MUHAMMED SHIJIL NK</h3>
+      
+      {/* ഇവിടെ നിങ്ങളുടെ സ്റ്റേറ്റ് അനുസരിച്ചായിരിക്കും ക്ലാസ് നെയിം മാറുക */}
+      <ul className={isMobile ? "nav-links-mobile" : "nav-links"}>
+        <li>
+          <a href="#home" onClick={closeMobileMenu}>Home</a>
+        </li>
+        <li>
+          <a href="#services" onClick={closeMobileMenu}>Services</a>
+        </li>
+        <li>
+          <a href="#portfolio" onClick={closeMobileMenu}>Portfolio</a>
+        </li>
+        <li>
+          <a href="#team" onClick={closeMobileMenu}>Team</a>
+        </li>
+        <li>
+          <a href="#blog" onClick={closeMobileMenu}>Blog</a>
+        </li>
+        <li>
+          <a href="#contact" onClick={closeMobileMenu}>Contact</a>
+        </li>
+      </ul>
 
-        <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/services">Services</Link></li>
-            <li><Link to="/portfolio">Portfolio</Link></li>
-            <li><Link to="/team">Team</Link></li>
-            <li><Link to="/blog">Blog</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
-          </ul>
-        </div>
-
-      </div>
+      {/* ഹാംബർഗർ ഐക്കൺ ബട്ടൺ */}
+      <button className="mobile-menu-icon" onClick={() => setIsMobile(!isMobile)}>
+        {isMobile ? <i className="fas fa-times"></i> : <i className="fas fa-bars"></i>}
+      </button>
     </nav>
   );
 }
