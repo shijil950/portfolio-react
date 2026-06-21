@@ -43,3 +43,17 @@ margin-bottom:20px;
 margin-bottom:20px;
 color:white;
 }
+@media (max-width: 768px) {
+  /* മൂന്ന് കാർഡുകൾ വശങ്ങളിലേക്ക് പോകാതെ ഒന്നിന് താഴെ ഒന്നാക്കാൻ */
+  .services-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .service-card {
+    width: 100% !important; /* കാർഡുകൾക്ക് ഫുൾ വീതി നൽകാൻ */
+    max-width: 350px;
+  }
+}

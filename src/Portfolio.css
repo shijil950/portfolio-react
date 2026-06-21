@@ -49,3 +49,17 @@ transition:.4s;
 .gallery img:hover{
 transform:scale(1.05);
 }
+@media (max-width: 768px) {
+  /* ഗാലറി ഇമേജുകൾ മൊബൈലിൽ 2 വീതമോ അല്ലെങ്കിൽ ഒന്നിന് താഴെ ഒന്നായോ മാറ്റാൻ */
+  .portfolio-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 15px;
+  }
+
+  .portfolio-item {
+    width: 100%;
+    height: 250px; /* ഇമേജുകൾക്ക് കൃത്യമായ ഹൈറ്റ് വരാൻ */
+  }
+}
