@@ -49,3 +49,16 @@ transition:.4s;
 .gallery img:hover{
 transform:scale(1.05);
 }
+@media (max-width: 768px) {
+  .portfolio-container, [class*="portfolio"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important;
+  }
+
+  .portfolio-item, [class*="item"] {
+    width: 90% !important;
+    max-width: 350px !important;
+  }
+}

@@ -46,3 +46,31 @@ width:40%;
 width:100%;
 border-radius:10px;
 }
+@media (max-width: 768px) {
+  /* ഹോം സെക്ഷനിലെ മെയിൻ ഫ്ലെക്സ് കണ്ടെയ്നർ */
+  .home, [class*="home-container"] {
+    display: flex !important;
+    flex-direction: column-reverse !important; /* മൊബൈലിൽ എഴുത്ത് മുകളിലും ഫോട്ടോ താഴെയും വരാൻ */
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 80px 20px 40px 20px !important;
+    height: auto !important;
+    min-height: 100vh !important;
+  }
+
+  /* ഹോം പേജിലെ എഴുത്തുകൾ ഉള്ള ഭാഗം */
+  .home-content, [class*="content"] {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  /* ഫോട്ടോ ഇരിക്കുന്ന ഭാഗം */
+  .home-img, [class*="img"] {
+    width: 100% !important;
+    max-width: 280px !important;
+    margin-bottom: 20px !important;
+  }
+}

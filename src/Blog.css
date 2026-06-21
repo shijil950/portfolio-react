@@ -60,3 +60,17 @@ transition:.3s;
 .blog-card button:hover{
 background:#8cc63f;
 }
+@media (max-width: 768px) {
+  /* നിങ്ങളുടെ ബ്ലോഗ് കാർഡുകളുടെ മെയിൻ കണ്ടെയ്നർ ക്ലാസ് ഇതിന് പകരം മാറ്റി നൽകാം */
+  .blog-container, [class*="container"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 30px !important;
+  }
+
+  .blog-card, [class*="card"] {
+    width: 90% !important;
+    max-width: 350px !important;
+  }
+}
