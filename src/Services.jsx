@@ -8,7 +8,7 @@ function Services() {
       <h1>Our Services</h1>
       <p>Sub Heading Goes Here</p>
 
-      <div className="service-container">
+      <div className="services-container">
 
         <div className="card">
           <FaGem className="icon" />
