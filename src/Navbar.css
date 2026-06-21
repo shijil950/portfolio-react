@@ -40,3 +40,22 @@ transition:.3s;
 .navbar a:hover{
 color:#8cc63f;
 }
+/* മൊബൈൽ ഫോണുകളിൽ ലിങ്കുകൾ വലുതാക്കാനും എളുപ്പത്തിൽ ക്ലിക്ക് ചെയ്യാനും */
+@media (max-width: 768px) {
+  /* ബാറിന്റെ ഹൈറ്റും ഉൾവശത്തെ സ്പേസും കൂട്ടാൻ */
+  nav, .navbar {
+    padding: 15px 20px !important;
+    height: auto !important;
+  }
+
+  /* ലിങ്കുകൾ തമ്മിലുള്ള അകലം കൂട്ടാനും ഫോണ്ട് വലിപ്പം കൂട്ടാനും */
+  nav ul, .nav-menu {
+    gap: 15px !important; /* ലിങ്കുകൾ തമ്മിലുള്ള അകലം */
+  }
+
+  nav a, .nav-links {
+    font-size: 16px !important; /* അക്ഷരങ്ങൾ വ്യക്തമായി കാണാൻ */
+    padding: 10px 12px !important; /* വിരൽ തൊടാൻ പാകത്തിന് ചുറ്റും സ്പേസ് നൽകുന്നു (Touch Target) */
+    display: inline-block !important;
+  }
+}
