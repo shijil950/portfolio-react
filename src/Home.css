@@ -1,106 +1,48 @@
-/* 💻 ലാപ്ടോപ്പിനും വലിയ സ്ക്രീനുകൾക്കും വേണ്ടിയുള്ള ഡിസൈൻ */
-.home-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 80vh;
-  padding: 50px 8%;
-  background-color: #0b0f19;
-  color: white;
+.home{
+min-height:100vh;
+background:black;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 100px;
 }
 
-.home-content {
-  flex: 1;
-  max-width: 600px;
+.left{
+width:50%;
 }
 
-.home-content h1 {
-  font-size: 3.5rem;
-  font-weight: bold;
-  margin-bottom: 10px;
+.left h1{
+/* font-size:220px; */
+margin-bottom:20px;
+Color:white;
+font-style:sans-serif;
+/* padding-bottom:50px; */
 }
 
-.home-content p {
-  font-size: 1.2rem;
-  color: #a0aec0;
-  margin-bottom: 30px;
+.left p{
+color:gray;
+margin-bottom:40px;
+/* padding-bottom:50px; */
 }
 
-.home-buttons {
-  display: flex;
-  gap: 20px;
+.buttons button{
+background:transparent;
+color:rgb(253, 252, 252);
+border:1px solid #8cc63f;
+padding:10px 20px;
+margin:10px;
+cursor:pointer;
+transition:.3s;
+
+}
+.buttons button:hover{
+background:#8cc63f;
+}
+.right{
+width:40%;
 }
 
-.btn-profile, .btn-more {
-  border: 1px solid #9fef00;
-  color: white;
-  padding: 12px 25px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-
-.btn-profile:hover, .btn-more:hover {
-  background-color: #9fef00;
-  color: black;
-}
-
-.home-image {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.home-image img {
-  max-width: 400px;
-  width: 100%;
-  border-radius: 10px;
-}
-
-/* 📱 മൊബൈൽ ഫോണുകൾക്ക് വേണ്ടിയുള്ള പെർഫെക്റ്റ് ഡിസൈൻ */
-@media (max-width: 768px) {
-  .home-container {
-    flex-direction: column; /* ഫോട്ടോ മുകളിലും ടെക്സ്റ്റ് താഴെയും വരാൻ */
-    text-align: center;
-    padding: 100px 20px 40px 20px; /* Navbar മൂടിപ്പോകാതിരിക്കാൻ മുകളിൽ padding കൂട്ടി */
-    gap: 40px;
-    min-height: auto;
-  }
-
-  .home-image {
-    width: 100%;
-    order: 1; /* മൊബൈലിൽ ഫോട്ടോ ആദ്യം കാണിക്കാൻ */
-  }
-
-  .home-image img {
-    max-width: 250px; /* മൊബൈലിൽ ഫോട്ടോയ്ക്ക് അനുയോജ്യമായ വലിപ്പം */
-    height: auto;
-    margin: 0 auto;
-    border-radius: 50%; /* ഫോട്ടോ റൗണ്ട് ആക്കണമെങ്കിൽ ഇത് ഉപയോഗിക്കാം, ചതുരം മതിയെങ്കിൽ ഈ ലൈൻ കളയാം */
-  }
-
-  .home-content {
-    width: 100%;
-    order: 2; /* ഫോട്ടോയ്ക്ക് താഴെ ടെക്സ്റ്റ് വരാൻ */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* എല്ലാ ടെക്സ്റ്റും സെന്റർ ആക്കാൻ */
-  }
-
-  .home-content h1 {
-    font-size: 2.5rem; /* മൊബൈലിൽ അക്ഷരങ്ങളുടെ വലിപ്പം കുറച്ചു */
-  }
-
-  .home-buttons {
-    flex-direction: column; /* ബട്ടണുകൾ ഒന്നിന് താഴെ ഒന്നാക്കാൻ */
-    gap: 15px;
-    width: 100%;
-    max-width: 280px; /* ബട്ടണുകൾ വല്ലാതെ വലുതാകാതിരിക്കാൻ */
-  }
-
-  .btn-profile, .btn-more {
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
+.right img{
+width:100%;
+border-radius:10px;
 }

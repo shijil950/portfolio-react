@@ -66,13 +66,3 @@
     border-bottom: none; /* അവസാന ലിങ്കിന് വര വേണ്ട */
   }
 }
-@media (max-width: 768px) {
-  .contact-container {
-    flex-direction: column;
-    padding: 20px;
-  }
-
-  .contact-form, .contact-info {
-    width: 100% !important;
-  }
-}
