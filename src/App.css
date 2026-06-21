@@ -10,8 +10,10 @@ html, body, #root {
   background: #111;
 }
 
+/* മൊബൈൽ ഫോണുകൾക്ക് വേണ്ടി മാത്രം */
 @media (max-width: 768px) {
   
+  /* 1. എല്ലാ സെക്ഷനുകളുടെയും ഹൈറ്റ് കുറയ്ക്കാൻ */
   section, 
   .home, 
   .services, 
@@ -24,14 +26,19 @@ html, body, #root {
     padding-bottom: 40px !important;
   }
 
-
-  .service-container,
-  .portfolio-container,
-  .team-container {
+  /* 2. സർവീസ് കാർഡുകൾ ഒന്നിന് താഴെ ഒന്നായി വരാൻ */
+  .service-container {
     display: flex !important;
     flex-direction: column !important;
+    gap: 20px !important;
     height: auto !important;
     min-height: auto !important;
-    gap: 20px !important;
+    align-items: center !important;
+  }
+
+  /* 3. ഓരോ കാർഡിനും മൊബൈലിൽ കൃത്യമായ വിഡ്ത്ത് കിട്ടാൻ */
+  .card {
+    width: 90% !important;
+    max-width: 350px !important;
   }
 }
