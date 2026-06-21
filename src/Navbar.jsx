@@ -1,32 +1,27 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // ലിങ്കിനായി ഇത് ഉപയോഗിക്കുന്നു
 import './Navbar.css';
 
 function Navbar() {
-  // മൊബൈൽ മെനു ഓപ്പൺ/ക്ലോസ് ചെയ്യാനുള്ള സ്റ്റേറ്റ്
   const [isOpen, setIsOpen] = useState(false);
-
-  // ലിങ്കുകളിൽ ക്ലിക്ക് ചെയ്യുമ്പോൾ മെനു തനിയെ അടയാൻ
-  const closeMenu = () => {
-    setIsOpen(false);
-  };
+  const closeMenu = () => setIsOpen(false); // മെനു ക്ലോസ് ചെയ്യാനുള്ള ഫങ്ഷൻ
 
   return (
     <nav className="navbar">
       <div className="navbar-logo">
         <h3>MUHAMMED SHIJIL NK</h3>
       </div>
-
-      {/* isOpen ട്രൂ ആണെങ്കിൽ 'active' ക്ലാസ് കൂടി വരും */}
+      
+      {/* Link ഉപയോഗിച്ച് റൂട്ടിംഗ് സെറ്റ് ചെയ്യുന്നു */}
       <ul className={`nav-links ${isOpen ? 'active' : ''}`}>
-        <li><a href="#home" onClick={closeMenu}>Home</a></li>
-        <li><a href="#services" onClick={closeMenu}>Services</a></li>
-        <li><a href="#portfolio" onClick={closeMenu}>Portfolio</a></li>
-        <li><a href="#team" onClick={closeMenu}>Team</a></li>
-        <li><a href="#blog" onClick={closeMenu}>Blog</a></li>
-        <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
+        <li><Link to="/" onClick={closeMenu}>Home</Link></li>
+        <li><Link to="/services" onClick={closeMenu}>Services</Link></li>
+        <li><Link to="/portfolio" onClick={closeMenu}>Portfolio</Link></li>
+        <li><Link to="/team" onClick={closeMenu}>Team</Link></li>
+        <li><Link to="/blog" onClick={closeMenu}>Blog</Link></li>
+        <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
       </ul>
 
-      {/* മൊബൈലിൽ കാണിക്കാനുള്ള മൂന്ന് വരകളുടെ/ഗുണന ചിഹ്നത്തിന്റെ ബട്ടൺ */}
       <button className="mobile-menu-icon" onClick={() => setIsOpen(!isOpen)}>
         {isOpen ? '✕' : '☰'}
       </button>
