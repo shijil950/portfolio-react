@@ -1,42 +1,51 @@
 import "./Services.css";
-import { FaGem, FaHeart, FaGlobe } from "react-icons/fa";
+// പുതിയ പ്രൊഫഷണൽ ഐക്കണുകൾ ഇംപോർട്ട് ചെയ്യുന്നു
+import { FaCode, FaServer, FaCloudUploadAlt } from "react-icons/fa";
 
 function Services() {
   return (
     <section className="services">
-
-      <h1>Our Services</h1>
-      <p>Sub Heading Goes Here</p>
+      <h1 className="services-title">Our Services</h1>
+      <p className="services-subtitle">
+        Turning Complex Ideas into Scalable Web Solutions
+      </p>
 
       <div className="services-container">
-
+        {/* Card 1: Frontend Development */}
         <div className="card">
-          <FaGem className="icon" />
-          <h2>Development</h2>
+          <div className="icon-wrapper">
+            <FaCode className="icon" />
+          </div>
+          <h2>Frontend Development</h2>
           <p>
-            Non varius mauris eget sodales tempus.
-            Quisque sollicitudin consectetur accumsan.
+            Building responsive, high-performance web applications using React.js. 
+            Focused on creating intuitive user experiences and clean codebases.
           </p>
         </div>
 
+        {/* Card 2: Backend Development */}
         <div className="card">
-          <FaHeart className="icon" />
-          <h2>Design</h2>
+          <div className="icon-wrapper">
+            <FaServer className="icon" />
+          </div>
+          <h2>Backend & APIs</h2>
           <p>
-            Non varius mauris eget sodales tempus.
-            Quisque sollicitudin consectetur accumsan.
+            Developing robust, secure, and scalable server-side applications using 
+            Node.js and Express.js, integrated with MongoDB databases.
           </p>
         </div>
 
+        {/* Card 3: Full-Stack Deployment */}
         <div className="card">
-          <FaGlobe className="icon" />
-          <h2>SEO</h2>
+          <div className="icon-wrapper">
+            <FaCloudUploadAlt className="icon" />
+          </div>
+          <h2>Deployment & DevOps</h2>
           <p>
-            Non varius mauris eget sodales tempus.
-            Quisque sollicitudin consectetur accumsan.
+            Deploying Full-Stack applications on cloud platforms like AWS, Vercel, 
+            or Heroku with optimized performance and SEO best practices.
           </p>
         </div>
-
       </div>
     </section>
   );

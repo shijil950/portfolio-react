@@ -1,76 +1,185 @@
-.home{
-min-height:100vh;
-background:black;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:0 100px;
+.home-hero {
+  background-color: #0b0b0b; /* കടും കറുപ്പ് പശ്ചാത്തലം */
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+  position: relative;
 }
 
-.left{
-width:50%;
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  gap: 50px;
 }
 
-.left h1{
-/* font-size:220px; */
-margin-bottom:20px;
-Color:white;
-font-style:sans-serif;
-/* padding-bottom:50px; */
+/* കണ്ടെന്റ് സെക്ഷൻ */
+.hero-content {
+  flex: 1;
+  text-align: left;
+  z-index: 5;
 }
 
-.left p{
-color:gray;
-margin-bottom:40px;
-/* padding-bottom:50px; */
+.welcome-tag {
+  color: #5cb85c; /* നിങ്ങളുടെ ബ്രാൻഡ് പച്ച */
+  background-color: rgba(92, 184, 92, 0.1);
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 20px;
 }
 
-.buttons button{
-background:transparent;
-color:rgb(253, 252, 252);
-border:1px solid #8cc63f;
-padding:10px 20px;
-margin:10px;
-cursor:pointer;
-transition:.3s;
-
-}
-.buttons button:hover{
-background:#8cc63f;
-}
-.right{
-width:40%;
+.hero-title {
+  font-size: 3.5rem;
+  color: #ffffff;
+  font-weight: 800;
+  margin-bottom: 10px;
 }
 
-.right img{
-width:100%;
-border-radius:10px;
+.hero-title .highlight {
+  color: #5cb85c;
 }
-@media (max-width: 768px) {
-  /* ഹോം സെക്ഷനിലെ മെയിൻ ഫ്ലെക്സ് കണ്ടെയ്നർ */
-  .home, [class*="home-container"] {
-    display: flex !important;
-    flex-direction: column-reverse !important; /* മൊബൈലിൽ എഴുത്ത് മുകളിലും ഫോട്ടോ താഴെയും വരാൻ */
-    justify-content: center !important;
-    align-items: center !important;
-    text-align: center !important;
-    padding: 80px 20px 40px 20px !important;
-    height: auto !important;
-    min-height: 100vh !important;
+
+.hero-typing {
+  font-size: 1.8rem;
+  color: #dddddd;
+  font-weight: 500;
+  margin-bottom: 20px;
+  height: 40px;
+}
+
+.typewriter {
+  color: #ffffff;
+  font-weight: 600;
+  border-right: 2px solid #5cb85c;
+  padding-right: 5px;
+}
+
+/* വിവരണം */
+.hero-description {
+  font-size: 1.1rem;
+  color: #aaaaaa;
+  line-height: 1.7;
+  margin-bottom: 35px;
+  max-width: 550px;
+}
+
+/* ബട്ടണുകൾ */
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.btn-primary {
+  text-decoration: none;
+  background-color: #5cb85c;
+  color: #ffffff;
+  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(92, 184, 92, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: #4cae4c;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  text-decoration: none;
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  padding: 12px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #ffffff;
+  color: #0b0b0b;
+  transform: translateY(-2px);
+}
+
+/* ഫോട്ടോയ്ക്ക് പകരമുള്ള വിഷ്വൽ ഗ്രാഫിക്സ് എഫക്റ്റ് */
+.hero-visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.tech-sphere {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-glow {
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(92, 184, 92, 0.4) 0%, transparent 70%);
+  position: absolute;
+  filter: blur(10px);
+}
+
+/* ഒഴുകി നടക്കുന്ന സർക്കിളുകൾ */
+.circle {
+  position: absolute;
+  background-color: #111111;
+  color: #ffffff;
+  border: 1px solid #333333;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  animation: floatAnim 4s ease-in-out infinite;
+}
+
+.react-circle { top: 10%; left: 10%; animation-delay: 0s; border-color: #61dafb; }
+.node-circle { bottom: 15%; left: 5%; animation-delay: 1s; border-color: #339933; }
+.mongo-circle { top: 20%; right: 5%; animation-delay: 2s; border-color: #47a248; }
+.express-circle { bottom: 10%; right: 15%; animation-delay: 3s; border-color: #ffffff; }
+
+@keyframes floatAnim {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(2deg); }
+}
+
+/* മൊബൈൽ സ്ക്രീനുകൾക്ക് വേണ്ടി */
+@media (max-width: 900px) {
+  .hero-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 40px;
   }
-
-  /* ഹോം പേജിലെ എഴുത്തുകൾ ഉള്ള ഭാഗം */
-  .home-content, [class*="content"] {
-    width: 100% !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
+  .hero-content {
+    text-align: center;
   }
-
-  /* ഫോട്ടോ ഇരിക്കുന്ന ഭാഗം */
-  .home-img, [class*="img"] {
-    width: 100% !important;
-    max-width: 280px !important;
-    margin-bottom: 20px !important;
+  .hero-buttons {
+    justify-content: center;
+  }
+  .tech-sphere {
+    width: 280px;
+    height: 280px;
   }
 }

@@ -1,76 +1,113 @@
-.blog{
-    background:rgb(253, 250, 250);
-    color:rgb(249, 247, 247);
-    padding:100px 80px;
-    text-align:center;
+.blog-section {
+  padding: 80px 20px;
+  background-color: #fcfcfc;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.blog h1{
-    font-size:40px;
+.blog-title {
+  font-size: 2.5rem;
+  color: #111111;
+  font-weight: 700;
+  margin-bottom: 5px;
 }
 
-.blog p{
-    color:gray;
+.blog-subtitle {
+  font-size: 1.1rem;
+  color: #666666;
+  margin-bottom: 50px;
 }
 
-.blog-container{
-    margin-top:50px;
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    color:rgb(248, 246, 246);
+/* ഗ്രിഡ് ലേഔട്ട് */
+.blog-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.big-container h2{
-    margin-top:20px;
-    color:rgb(248, 246, 246);
-}
-.blog-card{
-    width:350px;
-    background:#1f1f1f;
-    border-radius:10px;
-    overflow:hidden;
-}
-
-.blog-card img{
-    width:100%;
+/* കാർഡ് സ്റ്റൈൽ */
+.blog-card {
+  background-color: #111111; /* നിങ്ങളുടെ ഡാർക്ക് കാർഡ് തീം */
+  color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 360px;
+  text-align: left;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.blog-card h2{
-    margin-top:20px;
-    color: white;
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-.blog-card p{
-    padding:20px;
-    color:rgb(248, 246, 246);
+/* ഇമേജ് ബോക്സ് */
+.blog-img-box {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
 }
 
-.blog-card button{
-    background:transparent;
-color:rgb(252, 251, 251);
-border:1px solid #fefdfd;
-padding:10px 20px;
-margin:10px;
-cursor:pointer;
-transition:.3s;
+.blog-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-
-.blog-card button:hover{
-background:#8cc63f;
+.blog-card:hover .blog-img-box img {
+  transform: scale(1.05);
 }
+
+/* കാർഡിനുള്ളിലെ കണ്ടെന്റ് */
+.blog-info-box {
+  padding: 25px;
+}
+
+.blog-info-box h3 {
+  font-size: 1.25rem;
+  color: #ffffff;
+  margin-bottom: 12px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.blog-info-box p {
+  font-size: 0.95rem;
+  color: #cccccc;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  height: 70px; /* ടെക്സ്റ്റുകൾ ഒരേ ലെവലിൽ നിൽക്കാൻ */
+  overflow: hidden;
+}
+
+/* നിങ്ങളുടെ ബ്രാൻഡ് പച്ച ബട്ടൺ */
+.read-more-btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #ffffff;
+  border: 2px solid #5cb85c;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 4px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background-color: #5cb85c;
+  box-shadow: 0 4px 12px rgba(92, 184, 92, 0.3);
+}
+
+/* മൊബൈൽ റെസ്പോൺസീവ് */
 @media (max-width: 768px) {
-  /* നിങ്ങളുടെ ബ്ലോഗ് കാർഡുകളുടെ മെയിൻ കണ്ടെയ്നർ ക്ലാസ് ഇതിന് പകരം മാറ്റി നൽകാം */
-  .blog-container, [class*="container"] {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 30px !important;
-  }
-
-  .blog-card, [class*="card"] {
-    width: 90% !important;
-    max-width: 350px !important;
+  .blog-card {
+    width: 100%;
+    max-width: 380px;
   }
 }

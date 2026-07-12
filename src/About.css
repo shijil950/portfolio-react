@@ -1,0 +1,170 @@
+/* പ്രധാന സെക്ഷൻ്റെ സ്റ്റൈൽ */
+.about {
+  padding: 80px 20px;
+  background-color: #fcfcfc;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  color: #111111;
+  text-align: center;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.about-subtitle {
+  font-size: 1.1rem;
+  color: #666666;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+/* രണ്ട് ഭാഗങ്ങളാക്കാനുള്ള കണ്ടെയ്നർ ലേഔട്ട് */
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ഇമേജ് സെക്ഷൻ */
+.about-image-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.image-border-effect {
+  position: relative;
+  width: 320px;
+  height: 380px;
+}
+
+.image-border-effect img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+/* ഫോട്ടോയ്ക്ക് പിന്നിലുള്ള ഭംഗിയുള്ള പച്ച ബോർഡർ എഫക്റ്റ് */
+.image-border-effect::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100%;
+  height: 100%;
+  border: 4px solid #5cb85c; /* നിങ്ങളുടെ ബ്രാൻഡ് പച്ച കളർ */
+  border-radius: 12px;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.image-border-effect:hover::after {
+  top: 10px;
+  left: 10px;
+}
+
+/* കണ്ടെന്റ് സെക്ഷൻ */
+.about-content-section {
+  flex: 1.2;
+  text-align: left;
+}
+
+.about-content-section h2 {
+  font-size: 2.2rem;
+  color: #111111;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.about-content-section h3 {
+  font-size: 1.3rem;
+  color: #5cb85c;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.about-text {
+  font-size: 1.05rem;
+  color: #444444;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.about-text strong {
+  color: #111111;
+}
+
+/* ടെക്നോളജി ബാഡ്ജുകൾ */
+.tech-badges {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 25px 0 35px 0;
+}
+
+.badge {
+  background-color: #111111;
+  color: #ffffff;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.badge svg {
+  color: #5cb85c;
+}
+
+/* കോൺടാക്റ്റ് ബട്ടൺ */
+.about-cta-btn {
+  text-decoration: none;
+  background-color: #111111;
+  color: #ffffff;
+  padding: 12px 30px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  border: 2px solid #111111;
+  display: inline-block;
+}
+
+.about-cta-btn:hover {
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+  box-shadow: 0 5px 15px rgba(92, 184, 92, 0.3);
+}
+
+/* റെസ്പോൺസീവ് ഡിസൈൻ (ഫോണുകൾക്ക് വേണ്ടി) */
+@media (max-width: 900px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+  
+  .about-content-section {
+    text-align: center;
+  }
+  
+  .tech-badges {
+    justify-content: center;
+  }
+  
+  .image-border-effect {
+    width: 280px;
+    height: 340px;
+  }
+}

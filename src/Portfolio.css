@@ -1,64 +1,162 @@
-.portfolio{
-background:rgb(249, 248, 248);
-padding:100px 80px;
-text-align:center;
+/* പ്രധാന സെക്ഷൻ്റെ സ്റ്റൈൽ */
+.portfolio {
+  padding: 60px 20px;
+  background-color: #fcfcfc;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.portfolio h1{
-font-size:40px;
-margin-bottom:10px;
+.portfolio-title {
+  font-size: 2.5rem;
+  color: #111111;
+  margin-bottom: 10px;
+  font-weight: 700;
 }
 
-.portfolio p{
-color:gray;
-margin-bottom:30px;
+.portfolio-subtitle {
+  font-size: 1.1rem;
+  color: #666666;
+  margin-bottom: 40px;
 }
 
-.buttons{
-margin-bottom:50px;
+/* ഫിൽട്ടർ ബട്ടണുകളുടെ സ്റ്റൈൽ */
+.portfolio-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
 }
 
-.buttons4 button{
-background:transparent;
-color:rgb(5, 5, 5);
-border:1px solid #050505;
-padding:10px 20px;
-margin:10px;
-cursor:pointer;
-transition:.3s;
+.filter-btn {
+  background-color: transparent;
+  color: #111111;
+  border: 2px solid #111111;
+  padding: 10px 24px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
 }
 
-.buttons4 button:hover{
-background:#8cc63f;
+/* ബട്ടൺ ഹോവർ ചെയ്യുമ്പോഴും സെലക്ട് ചെയ്യപ്പെടുമ്പോഴും നിങ്ങളുടെ ബ്രാൻഡ് ഗ്രീൻ കളർ വരും */
+.filter-btn:hover, 
+.filter-btn.active {
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(92, 184, 92, 0.3);
 }
 
-.gallery{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
+/* ഗാലറി ഗ്രിഡ് സിസ്റ്റം */
+.portfolio-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.gallery img{
-width:100%;
-height:220px;
-object-fit:cover;
-border-radius:8px;
-transition:.4s;
+/* ഓരോ പ്രൊജക്റ്റ് കാർഡിന്റെയും സ്റ്റൈൽ */
+.portfolio-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  text-align: left;
 }
 
-.gallery img:hover{
-transform:scale(1.05);
+.portfolio-card:hover {
+  transform: translateY(-5px);
 }
-@media (max-width: 768px) {
-  .portfolio-container, [class*="portfolio"] {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 20px !important;
-  }
 
-  .portfolio-item, [class*="item"] {
-    width: 90% !important;
-    max-width: 350px !important;
-  }
+/* ഇമേജ് കണ്ടെയ്നറും ഹോവർ എഫക്റ്റും */
+.portfolio-img-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color: #111111;
+}
+
+.portfolio-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.portfolio-card:hover .portfolio-img-container img {
+  transform: scale(1.1); /* ഹോവർ ചെയ്യുമ്പോൾ ചിത്രം അല്പം സൂം ആകും */
+}
+
+/* ചിത്രത്തിന് മുകളിലുള്ള കറുത്ത ഓവർലേ സ്ക്രീൻ */
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(17, 17, 17, 0.85); /* ഡാർക്ക് ടോൺ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-img-container:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+/* ഓവർലേ ബട്ടണുകൾ/ലിങ്കുകൾ */
+.overlay-links {
+  display: flex;
+  gap: 15px;
+}
+
+.overlay-links a {
+  text-decoration: none;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 8px 18px;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.overlay-links a:hover {
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+}
+
+/* കാർഡിന് താഴെയുള്ള വിവരങ്ങൾ */
+.portfolio-info {
+  padding: 20px;
+}
+
+.project-category {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #5cb85c;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.portfolio-info h3 {
+  font-size: 1.2rem;
+  color: #111111;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.project-tech {
+  font-size: 0.85rem;
+  color: #666666;
+  line-height: 1.4;
 }

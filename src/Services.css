@@ -1,68 +1,85 @@
-.services{
-background:#faf9f9;
-padding:100px 80px;
-text-align:center;
+/* പ്രധാന സെക്ഷൻ്റെ സ്റ്റൈൽ */
+.services {
+  padding: 60px 20px;
+  background-color: #fcfcfc; /* ലൈറ്റ് ബാക്ക്ഗ്രൗണ്ട് */
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.services h1{
-font-size:40px;
-margin-bottom:10px;
-
+.services-title {
+  font-size: 2.5rem;
+  color: #111111;
+  margin-bottom: 10px;
+  font-weight: 700;
 }
 
-.services p{
-color:rgb(252, 251, 251);
+/* സബ് ഹെഡിംഗ് കൂടുതൽ വ്യക്തതയുള്ള കളറിലേക്ക് മാറ്റി */
+.services-subtitle {
+  font-size: 1.1rem;
+  color: #666666; 
+  margin-bottom: 50px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.services-container{
-display:flex;
-justify-content:center;
-gap:30px;
-margin-top:60px;
+/* കാർഡുകൾ ഒരേ നിരയിൽ വരാൻ ഫ്ലെക്സ് ബോക്സ് */
+.services-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap; /* മൊബൈൽ സ്ക്രീനിൽ താഴേക്ക് വരാൻ */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.card{
-background:#111;
-padding:40px;
-width:300px;
-border-radius:10px;
-transition:.4s;
+/* കാർഡിന്റെ ഡിസൈൻ */
+.card {
+  background-color: #111111; /* ഡാർക്ക് കാർഡ് */
+  color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  width: 320px;
+  text-align: left; /* കൂടുതൽ പ്രൊഫഷണൽ ലുക്കിനായി ലെഫ്റ്റ് അലൈൻ ചെയ്തു */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* ആനിമേഷൻ സ്മൂത്ത് ആക്കാൻ */
 }
 
-.card:hover{
-transform:translateY(-10px);
+/* ഹോവർ ചെയ്യുമ്പോൾ കാർഡ് അല്പം ഉയരുന്ന എഫക്റ്റ് */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
-.icon{
-font-size:45px;
-color:#8cc63f;
-margin-bottom:20px;
+/* ഐക്കൺ സ്റ്റൈൽ */
+.icon-wrapper {
+  margin-bottom: 20px;
 }
 
-.card h2{
-margin-bottom:20px;
-color:white;
+.icon {
+  font-size: 2.5rem;
+  color: #5cb85c; /* നിങ്ങളുടെ ബ്രാൻഡ് പച്ച കളർ */
 }
+
+/* കാർഡിനുള്ളിലെ ഹെഡിംഗ് */
+.card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* കാർഡിനുള്ളിലെ വിവരണം */
+.card p {
+  font-size: 0.95rem;
+  color: #cccccc; /* വായിക്കാൻ സുഖമുള്ള ലൈറ്റ് ഗ്രേ കളർ */
+  line-height: 1.6;
+}
+
+/* മൊബൈൽ ഫോണുകൾക്ക് വേണ്ടിയുള്ള ചെറിയ മാറ്റം */
 @media (max-width: 768px) {
-  .services-container {
-    min-height: auto !important;
-    height: auto !important;
-    padding-top: 40px !important;
-    padding-bottom: 40px !important;
-  }
-}
-@media (max-width: 768px) {
-  .service-container {
-    display: flex !important;
-    flex-direction: column !important; /* കാർഡുകൾ ഒന്നിന് താഴെ ഒന്നാക്കാൻ */
-    align-items: center !important;
-    gap: 30px !important;
-    width: 100% !important;
-  }
-
   .card {
-    width: 90% !important; /* മൊബൈലിൽ നല്ല വലിപ്പം കിട്ടാൻ */
-    max-width: 350px !important;
-    margin: 0 auto !important;
+    width: 100%; /* ഫോണുകളിൽ കാർഡ് ഫുൾ വിഡ്ത് ആകും */
+    max-width: 350px;
   }
 }

@@ -1,102 +1,143 @@
-/* --- പൊതുവായ സ്റ്റൈലുകൾ (Laptop View) --- */
+/* നാവ്ബാറിന്റെ പൊതുവായ ഡിസൈൻ */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 80px;
-  background-color: #0c0c0c; /* നിങ്ങളുടെ ബ്ലാക്ക് തീം */
-  position: sticky;
+  padding: 20px 8%;
+  background-color: #0b0b0b; /* പ്രീമിയം ഡാർക്ക് ബാക്ക്ഗ്രൗണ്ട് */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000; /* എല്ലാ സെക്ഷനുകൾക്കും മുകളിൽ നിൽക്കാൻ */
+  z-index: 1000;
   box-sizing: border-box;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* നേരിയ ബോർഡർ */
 }
 
+/* ലോഗോ സ്റ്റൈൽ */
 .navbar-logo h3 {
-  color: #99cc33; /* നിങ്ങളുടെ ഗ്രീൻ കളർ */
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
   margin: 0;
-  font-size: 22px;
-  font-weight: bold;
+  letter-spacing: 1px;
 }
 
+.navbar-logo h3 span {
+  color: #39FF14; /* നിങ്ങളുടെ സിഗ്നേച്ചർ പച്ച നിറം */
+}
+
+/* മെനു ലിങ്കുകൾ */
 .nav-links {
-  display: flex;
   list-style: none;
-  gap: 30px;
+  display: flex;
+  align-items: center;
+  gap: 35px;
   margin: 0;
   padding: 0;
 }
 
-.nav-links li a {
-  color: #ffffff;
+.nav-item {
   text-decoration: none;
+  color: #aaaaaa;
   font-size: 16px;
   font-weight: 500;
   transition: color 0.3s ease;
+  position: relative;
+  padding-bottom: 6px;
 }
 
-.nav-links li a:hover {
-  color: #99cc33; /* ഹോവർ ചെയ്യുമ്പോൾ പച്ച നിറം */
+/* ഹോവർ ചെയ്യുമ്പോഴും ആക്റ്റീവ് ആകുമ്പോഴും */
+.nav-item:hover, 
+.nav-item.active {
+  color: #ffffff;
 }
 
-/* ലാപ്ടോപ്പിൽ ഈ മൂന്ന് വരകളുടെ ബട്ടൺ കാണിക്കരുത് */
+/* ലിങ്കുകൾക്ക് താഴെ വരുന്ന സ്മൂത്ത് പച്ച വര (Underline Animation) */
+.nav-item::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #39FF14;
+  transition: width 0.3s ease;
+}
+
+.nav-item:hover::after, 
+.nav-item.active::after {
+  width: 100%;
+}
+
+/* കോൺടാക്റ്റ് ബട്ടൺ സ്റ്റൈൽ */
+.btn-contact {
+  text-decoration: none;
+  color: #39FF14;
+  border: 2px solid #39FF14;
+  padding: 8px 22px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.btn-contact:hover {
+  background-color: #39FF14;
+  color: #0b0b0b;
+  box-shadow: 0 0 15px rgba(57, 255, 20, 0.3);
+}
+
+/* മൊബൈൽ മെനു ഐക്കൺ */
 .mobile-menu-icon {
   display: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 28px;
+  cursor: pointer;
 }
 
-/* --- മൊബൈൽ വ്യൂ സ്റ്റൈലുകൾ (Mobile Responsive) --- */
+/* റെസ്‌പോൺസീവ് ഡിസൈൻ (മൊബൈൽ ഫോണുകൾക്കായി) */
 @media (max-width: 768px) {
-  .navbar {
-    padding: 15px 20px;
-    height: 70px;
-  }
-
-  /* ലിങ്കുകൾ അടങ്ങിയ മെനു മൊബൈലിൽ ഫുൾ സ്ക്രീൻ മറയായി മാറും */
-  .nav-links {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 70px; /* നാവ്ബാറിന്റെ കൃത്യം താഴെ മുതൽ */
-    left: -100%; /* ആദ്യം സ്ക്രീനിന്റെ വെളിയിൽ ഒളിപ്പിച്ചു വെക്കുന്നു */
-    width: 100%;
-    height: calc(100vh - 70px);
-    background-color: #0c0c0c;
-    justify-content: flex-start;
-    align-items: center;
-    padding-top: 50px;
-    gap: 25px;
-    transition: left 0.4s ease; /* മെനു വഴുതി വരാൻ (Animation) */
-    z-index: 999;
-  }
-
-  /* ബട്ടൺ ക്ലിക്ക് ചെയ്യുമ്പോൾ മെനു സ്ക്രീനിലേക്ക് വരും */
-  .nav-links.active {
-    left: 0;
-  }
-
-  .nav-links li {
-    width: 100%;
-    text-align: center;
-  }
-
-  .nav-links li a {
-    font-size: 20px;
-    padding: 15px;
-    display: block; /* വിരൽ തൊടാൻ പാകത്തിന് സ്പേസ് കൂട്ടുന്നു */
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  /* മൊബൈലിൽ മൂന്ന് വരകളുടെ ബട്ടൺ കാണിക്കുക */
   .mobile-menu-icon {
     display: block;
-    background: none;
-    border: none;
-    color: #ffffff;
-    font-size: 30px;
-    cursor: pointer;
-    z-index: 1001; /* മെനുവിനും മുകളിൽ ബട്ടൺ വരാൻ */
-    padding: 5px;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: -100%;
+    width: 70%;
+    height: calc(100vh - 70px);
+    background-color: #111111;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px;
+    gap: 30px;
+    transition: right 0.4s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+  }
+
+  .nav-links.open {
+    right: 0; /* മെനു തുറക്കുമ്പോൾ ഉള്ളിലേക്ക് വരും */
+  }
+
+  .nav-item::after {
+    display: none; /* മൊബൈലിൽ അടിയിലെ വര ഒഴിവാക്കാം */
+  }
+
+  .nav-item.active {
+    color: #39FF14; /* മൊബൈലിൽ ആക്റ്റീവ് ലിങ്ക് പച്ച നിറമാകും */
+  }
+  
+  .nav-btn-container {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .btn-contact {
+    display: block;
+    text-align: center;
   }
 }
