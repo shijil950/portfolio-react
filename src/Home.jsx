@@ -37,38 +37,63 @@ function Home() {
   }, [currentText, isDeleting, currentWordIndex]);
 
   return (
-    <section className="home-hero">
-      <div className="hero-container">
+    // container-fluid, py-5 ഉപയോഗിച്ച് മൊബൈലിൽ ആവശ്യത്തിന് സ്പേസ് നൽകി
+    <section className="home-hero container-fluid py-5 min-vh-100 d-flex align-items-center">
+      
+      {/* Bootstrap Grid System (row-cols-1 ലാപ്ടോപ്പിൽ സൈഡ് ബൈ സൈഡ് ആയും 
+        മൊബൈലിൽ ഒന്നിന് താഴെ ഒന്നായും മാറ്റും)
+      */}
+      <div className="row align-items-center justify-content-center w-100 m-0 px-md-5">
         
-        {/* ഇടത് വശത്തെ കണ്ടെന്റ് */}
-        <div className="hero-content">
-          <span className="welcome-tag">Available for Freelance Projects</span>
-          <h1 className="hero-title">
-            Hi, I'm <span className="highlight">SHIJIL.</span>
+        {/* 1. ഇടത് വശത്തെ കണ്ടെന്റ് (മൊബൈലിൽ ഇത് ആദ്യം വരും) */}
+        {/* col-12 (മൊബൈലിൽ ഫുൾ വിഡ്ത്), col-lg-7 (ലാപ്ടോപ്പിൽ 7 കോളം വിഡ്ത്) */}
+        <div className="col-12 col-lg-7 text-center text-lg-start order-2 order-lg-1 px-3">
+          
+          <span className="welcome-tag d-inline-block bg-dark text-success border border-success rounded-pill px-3 py-2 mb-4 fs-6 fw-bold">
+            Available for Freelance Projects
+          </span>
+          
+          {/* display-4, display-md-2 ഫോൺ സ്ക്രീനുകളിൽ ഫോണ്ട് സൈസ് തനിയെ കുറയ്ക്കും */}
+          <h1 className="hero-title display-4 display-md-2 fw-bold text-white mb-3">
+            Hi, I'm <span className="highlight text-success">SHIJIL.</span>
           </h1>
-          <h2 className="hero-typing">
-            I am a <span className="typewriter">{currentText}</span>
+          
+          <h2 className="hero-typing h3 text-white mb-4">
+            I am a <span className="typewriter text-info">{currentText}</span>
             <span className="cursor">|</span>
           </h2>
-          <p className="hero-description">
+          
+          {/* mx-auto mx-lg-0 മൊബൈലിൽ സെന്റർ ചെയ്യാനും ലാപ്ടോപ്പിൽ ലെഫ്റ്റ് അലൈൻ ചെയ്യാനും */}
+          <p className="hero-description text-secondary mb-5 mx-auto mx-lg-0" style={{ maxWidth: '600px', fontSize: '1.1rem', lineHeight: '1.7' }}>
             Building high-performance, secure, and scalable full-stack web applications 
             tailored to your business needs using modern MongoDB, Express, React, and Node.js.
           </p>
           
-          <div className="hero-buttons">
-            <a href="/portfolio" className="btn-primary">View My Work</a>
-            <a href="/contact" className="btn-secondary">Let's Talk</a>
+          {/* ബട്ടണുകൾ മൊബൈലിൽ സെന്ററിലും വലിയ സ്ക്രീനിൽ ഇടതുവശത്തും വരാൻ */}
+          <div className="hero-buttons d-flex flex-wrap justify-content-center justify-content-lg-start gap-3">
+            <a href="/portfolio" className="btn btn-success rounded-pill px-4 py-2 fw-semibold text-white">View My Work</a>
+            <a href="/contact" className="btn btn-outline-light rounded-pill px-4 py-2 fw-semibold">Let's Talk</a>
           </div>
+          
         </div>
 
-        {/* വലത് വശത്തെ ഗ്രാഫിക്സ് (ഫോട്ടോയ്ക്ക് പകരം മോഡേൺ കോഡിംഗ് വിഷ്വൽ) */}
-        <div className="hero-visual">
-          <div className="tech-sphere">
-            <div className="circle react-circle">React</div>
-            <div className="circle node-circle">Node</div>
-            <div className="circle mongo-circle">Mongo</div>
-            <div className="circle express-circle">Express</div>
-            <div className="center-glow"></div>
+        {/* 2. വലത് വശത്തെ ഗ്രാഫിക്സ് (ബട്ടണുകൾ) */}
+        {/* col-12 (മൊബൈലിൽ ഫുൾ വിഡ്ത്), col-lg-5 (ലാപ്ടോപ്പിൽ 5 കോളം വിഡ്ത്) */}
+        {/* order-1 ഉള്ളതുകൊണ്ട് മൊബൈലിൽ ഇത് മുകളിലും ലാപ്ടോപ്പിൽ സൈഡിലും വരും */}
+        <div className="col-12 col-lg-5 text-center order-1 order-lg-2 mb-5 mb-lg-0">
+          <div className="hero-visual d-flex justify-content-center align-items-center">
+            
+            {/* മൊബൈലിൽ സ്ഥലം തികയാതെ വരുമ്പോൾ ബട്ടണുകൾ ഓവർലാപ്പ് ചെയ്യാതെ 
+              താഴേക്ക് ഒതുങ്ങാൻ d-flex flex-wrap ഉപയോഗിച്ചു
+            */}
+            <div className="tech-sphere d-flex flex-wrap justify-content-center gap-3 p-3 position-relative" style={{ maxWidth: '400px' }}>
+              <div className="circle react-circle btn btn-outline-info rounded-pill px-4 py-2 m-1 text-white fw-semibold">React</div>
+              <div className="circle node-circle btn btn-outline-success rounded-pill px-4 py-2 m-1 text-white fw-semibold">Node</div>
+              <div className="circle mongo-circle btn btn-outline-success rounded-pill px-4 py-2 m-1 text-white fw-semibold">Mongo</div>
+              <div className="circle express-circle btn btn-outline-light rounded-pill px-4 py-2 m-1 text-white fw-semibold">Express</div>
+              <div className="center-glow position-absolute top-50 start-50 translate-middle" style={{ width: '100px', height: '100px', background: 'radial-gradient(circle, rgba(40,167,69,0.3) 0%, transparent 70%)', zIndex: -1 }}></div>
+            </div>
+
           </div>
         </div>
 
