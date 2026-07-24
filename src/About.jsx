@@ -1,6 +1,6 @@
 import "./About.css";
 import { FaCode, FaDatabase, FaServer, FaLaptopCode } from "react-icons/fa";
-
+import { Link } from "react-router-dom"; // 👈 ഇത് ചേർക്കുക
 import profile from "./profile/anu.png";
 
 function About() {
@@ -14,7 +14,7 @@ function About() {
         <div className="about-image-section">
           <div className="image-border-effect">
             <img 
-              src={profile} // 💡 ഇവിടെ നമ്മൾ ഇംപോർട്ട് ചെയ്ത ഫോട്ടോ വേരിയബിൾ നൽകി
+              src={profile} 
               alt="Shijil - MERN Stack Developer" 
             />
           </div>
@@ -36,7 +36,7 @@ function About() {
             that helps businesses grow online.
           </p>
 
-          {/* നിങ്ങളുടെ പ്രധാന ടൂളുകൾ കാണിക്കുന്ന ചെറിയ സെക്ഷൻ */}
+          {/* പ്രധാന ടൂളുകൾ കാണിക്കുന്ന സെക്ഷൻ */}
           <div className="tech-badges">
             <span className="badge"><FaLaptopCode /> React.js</span>
             <span className="badge"><FaServer /> Node.js</span>
@@ -44,7 +44,8 @@ function About() {
             <span className="badge"><FaDatabase /> MongoDB</span>
           </div>
 
-          <a href="#contact" className="about-cta-btn">Work With Me</a>
+          {/* 💡 ഇവിടെ <a> ടാഗിന് പകരം Link ഉപയോഗിച്ചു */}
+          <Link to="/contact" className="about-cta-btn">Work With Me</Link>
         </div>
       </div>
     </section>

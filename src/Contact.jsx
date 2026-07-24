@@ -46,22 +46,22 @@ function Contact() {
           </div>
 
           {/* സോഷ്യൽ മീഡിയ ലിങ്കുകൾ */}
-          {/* സോഷ്യൽ മീഡിയ ലിങ്കുകൾ */}
-<div className="social-links">
-  {/* 💡 https://linkedin.com/in/your-username എന്നതിന് പകരം നിങ്ങളുടെ ശരിക്കുള്ള ലിങ്ക്ഡ്ഇൻ പ്രൊഫൈൽ ലിങ്ക് നൽകുക */}
-  <a href="www.linkedin.com/in/muhammed-shijil" target="_blank" rel="noreferrer">
-    <FaLinkedin />
-  </a>
-  
-  {/* 💡 https://github.com/your-username എന്നതിന് പകരം നിങ്ങളുടെ ശരിക്കുള്ള ഗിറ്റ്‌ഹബ്ബ് ലിങ്ക് നൽകുക */}
-  <a href="https://github.com/shijil950" target="_blank" rel="noreferrer">
-    <FaGithub />
-  </a>
-  
-  <a href="https://twitter.com" target="_blank" rel="noreferrer">
-    <FaTwitter />
-  </a>
-</div>
+          <div className="social-links">
+            {/* ലിങ്ക്ഡ്ഇൻ പ്രൊഫൈൽ ലിങ്ക് */}
+            <a href="https://www.linkedin.com/in/muhammed-shijil" target="_blank" rel="noreferrer">
+              <FaLinkedin />
+            </a>
+            
+            {/* ഗിറ്റ്‌ഹബ്ബ് പ്രൊഫൈൽ ലിങ്ക് */}
+            <a href="https://github.com/shijil950" target="_blank" rel="noreferrer">
+              <FaGithub />
+            </a>
+            
+            {/* ട്വിറ്റർ ലിങ്ക് */}
+            <a href="https://twitter.com" target="_blank" rel="noreferrer">
+              <FaTwitter />
+            </a>
+          </div>
         </div>
 
         {/* വലത് വശം: ഇൻപുട്ട് ഫോം */}
