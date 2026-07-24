@@ -1,14 +1,14 @@
 import { useState } from "react";
 import "./Portfolio.css";
 
-// നിങ്ങളുടെ രണ്ട് ഡിജിറ്റൽ പ്രൊജക്റ്റുകൾ ഇവിടെ നൽകിയിരിക്കുന്നു
+// നിങ്ങളുടെ മൂന്ന് ഡിജിറ്റൽ പ്രൊജക്റ്റുകൾ ഇവിടെ നൽകിയിരിക്കുന്നു
 const projectsData = [
   {
     id: 1,
     title: "Zendo Web",
     category: "PROJECT",
     tech: "Web Development / Digital Marketing",
-    image: "https://c0.wallpaperflare.com/preview/636/118/480/commerce-africa-asia-australia.jpg", // ആവശ്യമെങ്കിൽ ഇതിന്റെ സ്ക്രീൻഷോട്ട് ലിങ്ക് മാറ്റാം
+    image: "https://c0.wallpaperflare.com/preview/636/118/480/commerce-africa-asia-australia.jpg",
     liveLink: "https://zendoweb.netlify.app/",
     githubLink: "#",
   },
@@ -17,8 +17,17 @@ const projectsData = [
     title: "Zonex Eduhub",
     category: "PROJECT",
     tech: "Education Hub / Web Platform",
-    image: "https://t4.ftcdn.net/jpg/07/05/56/21/360_F_705562152_WFSrWPNw6TqrxQ3MJzWzaZ1oeH3jLtUu.jpg", // ആവശ്യമെങ്കിൽ ഇതിന്റെ സ്ക്രീൻഷോട്ട് ലിങ്ക് മാറ്റാം
+    image: "https://t4.ftcdn.net/jpg/07/05/56/21/360_F_705562152_WFSrWPNw6TqrxQ3MJzWzaZ1oeH3jLtUu.jpg",
     liveLink: "https://zonex-eduhub.netlify.app/",
+    githubLink: "#",
+  },
+  {
+    id: 3,
+    title: "Mobile Shop Ex",
+    category: "PROJECT",
+    tech: "E-Commerce / Mobile Store",
+    image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=600&auto=format&fit=crop", // ആവശ്യമെങ്കിൽ ഇതിന്റെ ലിങ്ക് മാറ്റാം
+    liveLink: "https://mobileshopex.netlify.app/",
     githubLink: "#",
   },
 ];
