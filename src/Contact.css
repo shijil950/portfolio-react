@@ -163,3 +163,97 @@
   align-items: center;
   justify-content: center;
   transition: background-color 0.}
+  /* മൊത്തത്തിലുള്ള കോൺടാക്റ്റ് സെക്ഷൻ */
+.contact-section {
+  padding: 50px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* ഹെഡിംഗ് ഭാഗം */
+.contact-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.contact-subtitle {
+  font-size: 1rem;
+  color: #aaa;
+}
+
+/* മെയിൻ കണ്ടെയ്നർ (ഇടതുവശവും വലതുവശവും ഒന്നിനു താഴെ ഒന്നായി വരാൻ) */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ഇടത് പാനൽ (വിവരങ്ങൾ) */
+.contact-info-panel {
+  flex: 1;
+  background-color: #161616;
+  padding: 30px;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+/* വലത് പാനൽ (ഫോം) */
+.contact-form-panel {
+  flex: 1.2;
+  background-color: #161616;
+  padding: 30px;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+/* ഫോം എലമെന്റുകൾ */
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  background-color: #222;
+  border: 1px solid #333;
+  border-radius: 6px;
+  color: #fff;
+  box-sizing: border-box; /* സ്ക്രീനിൽ നിന്ന് പുറത്തേക്ക് പോകാതിരിക്കാൻ ഇത് സഹായിക്കും */
+}
+
+/* മൊബൈൽ വ്യൂവിനായി (Mobile Responsive Media Query) */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column; /* മൊബൈലിൽ രണ്ടും ഒന്നിനു താഴെ ഒന്നായി വരും */
+    padding: 0 10px;
+  }
+
+  .contact-title {
+    font-size: 2rem; /* മൊബൈലിന് അനുസരിച്ച് ഹെഡിംഗ് ചെറുതാക്കുന്നു */
+  }
+
+  .contact-info-panel,
+  .contact-form-panel {
+    width: 100%;
+    padding: 20px;
+  }
+}
